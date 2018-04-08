@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'/>
     <title>Mango Riviera</title>
@@ -17,10 +18,24 @@
   <body style="background-size: 100%; background-attachment: fixed;" background="/static/images/sandbeach.jpeg">
 
     <script src="socket.io/socket.io.js"></script>
+    <script type='text/javascript' src='/js/libs/hbs.js'></script>
+
     <script src="/js/libs/moment-with-locales.js"></script>
+    <script src="/js/libs/mustache.js"></script>
     
+    <!--div class="container"-->
+
+
 
     <div id="content">
+
+        <script id="menu_partial_template" type="text/x-handlebars-template">
+          {{> partialTemplate_MENU currentpage = "Wind: 40 miles/h, 82"}}<br>
+        </script>
+
+        <div id="menu_placeholder"></div>
+        
+        <script src="/js/menu.js"></script>
         
       <div class="container">
       
@@ -61,6 +76,12 @@
 
     </div>
 
+      // script for tooltips
+      <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+      });
+      </script>
 
     <script src="/js/index.js"></script>
   </body>
