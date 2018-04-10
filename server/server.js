@@ -13,6 +13,8 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server); 
 
+hbs.registerPartials(path.join(__dirname , '../views/partials'))
+app.set('view engine', 'hbs');
 
 app.use(express.static(path.join(__dirname , '../public')));
 io.on('connection',(socket) => {
@@ -47,6 +49,12 @@ io.on('connection',(socket) => {
 
 });
 
+app.get('/home', (req, res) => {
+  res.render('home.hbs', {
+    pageTitle: 'Home Page',
+    welcomeMessage: 'Enjoy our resort more with this app - accurate statistics, bookings, schedules, requests and more'
+  });
+});
 
 // /bad - send back json with errorMessage
 app.get('/bad', (req, res) => {
