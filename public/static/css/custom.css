@@ -334,6 +334,17 @@ select#soflow, select#soflow-color, select#soflowf, select#soflowf-color, select
 	padding-top:15px !important; 
 }
 
+.boxed {
+    /* width: 300px; */
+    border: 25px green;
+    padding: 5px;
+    margin: 5px;
+    background: #ffffff !important;
+    color: #f2d768;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
 .footer{
     position: fixed;
     bottom: 0px;
