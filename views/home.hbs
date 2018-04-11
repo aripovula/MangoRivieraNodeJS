@@ -6,7 +6,10 @@
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/weather-icons.min.css">
+    {{!-- <link rel="stylesheet" type="text/css" href="/static/css/weather-icons.css"> --}}
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Mango Riviera</title>
 
             <!-- css customized for this page -->
@@ -36,19 +39,15 @@
         <div id="menu_placeholder"></div>
         
         <script src="/js/menu.js"></script> --}}
-        {{> header currentpage = "tochno eto"}}
+        {{> header firstlink = "About"}}
       <div class="container">
       
       </div>
         <div id="left">
             
-        {{!-- <script id="weather_partial_template" type="text/x-handlebars-template">
-          {{> partialTemplate_WEATHER currentpage = "Miami beach:"}}<br>
-        </script>
-
         <div id="weather_placeholder"></div>
         
-        <script src="/js/weather.js"></script> --}}
+        <script src="/js/weather.js"></script>
 
             <!- activity, rating, percentage booked, book or enroll buttons ->
             <div>

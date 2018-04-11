@@ -372,6 +372,9 @@ tr:nth-child(odd) {
 .tooltip.bottom .tooltip-inner {
     background-color:green;
     padding: 10px 10px 10px 10px;
+    margin-left: 20px;
     white-space:pre-wrap;
+    max-width: 500px;
+    width: 500px;  
   }
 

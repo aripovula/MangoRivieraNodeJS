@@ -1,17 +1,20 @@
-Handlebars.registerPartial("partialTemplate_orAnyNameYouGive", '{{language}} is {{adjective}}. You are reading this article on {{website22}} <a href="/index2.html">otherpage</a>');
+$(document).ready(function () {
 
-var context = {
-  "language": "Handlebars",
-  "adjective": "awesome"
-}
+  var open = "</span><i style='color:#FF69B4' class='wi ";
+  var close = "'></i><span>";
+  var context = {
+    "language": "Handlebars",
+    "detailed": "Wind: 50 mph, Humidity: 78%, Temperature: 84",
+    "brief": `${open}wi-strong-wind${close}: 50 mph, ${open}wi-humidity${close} : 78%, ${open}wi-thermometer${close} 84`
+  }
 
-//Retrieve the template data from the HTML .
-var template = $('#handlebars-demo').html();
+var l1 = `<span><h4 data-toggle="tooltip" data-placement="bottom" title=`;
+var l2 = `"Miami Beach, Florida, USA\n\n ${context.detailed}&deg;F\nThird line?:`;
+var l3 = ` \nUpdated every 30 minutes. Last updated at ____"`;
+var l4 = ` >Weather: ${context.brief}&deg;F. More ...`;
+var l5 = `</h4></span>`;
 
-//Compile the template data into a function
-var templateScript = Handlebars.compile(template);
+var html = l1 + l2 + l3 + l4 + l5;
 
-var html = templateScript(context);
-//html = 'My name is Ritesh Kumar . I am a developer.'
-
-$(document.body).append(html);
+$("#weather_placeholder").html(html);
+});
