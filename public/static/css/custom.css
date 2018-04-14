@@ -340,10 +340,23 @@ select#soflow, select#soflow-color, select#soflowf, select#soflowf-color, select
     padding: 5px;
     margin: 5px;
     background: #ffffff !important;
-    color: #f2d768;
+    color: green;
     font-size: 14px;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 2px;
+}
+
+.boxedtransp {
+    width: 96%;
+    border: green;
+    padding: 5px;
+    margin: 5px;
+    background: #ffffff !important;
+    /* color: green; */
+    /* font-size: 18px; */
+    text-align: left;
+    border-radius: 2px;
+    opacity: 0.8;
 }
 
 .footer{

@@ -11,11 +11,20 @@ socket.on('disconnect', function() {
 
 socket.on('newMessage',function(message){
 
-  
-  console.log("it works: "+message.text);
+  var timePosted = moment().format('h:mm a');
+  console.log("it works: "+message.text + " timePosted = "+timePosted);
 
-  var html = `<p>${message.from}: ${message.text}</p>`;
-  jQuery('#messages').append(html);
+  // var html = `<p>${message.from}: ${message.text}</p>`;
+  // jQuery('#messages').append(html);
+
+  var chatData = [{from:message.from, timePosted:timePosted, text:message.text }];
+   var theTemplateScript = $("#chat-template").html(); 
+   var theTemplate = Handlebars.compile(theTemplateScript); 
+   console.log("data = " + chatData[0].from);
+   console.log("data = " + chatData[0].text);
+   console.log("html = " + theTemplate(chatData));
+   $("#messages").append(theTemplate(chatData)); 
+
   jQuery('[name=message]').val('');
 });
 

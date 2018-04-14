@@ -12,10 +12,9 @@
 
       var apiKey       = 'e2633fdd11698cb204f35a082af5b6b1',
       url          = 'https://api.darksky.net/forecast/',
-      locationData         = '25.8102247,-80.2101822',
+      locationData         = '39.3469952,-84.4013568',  //'25.8102247,-80.2101822',
       api_call = url + apiKey + "/" + locationData + "?extend=hourly&callback=?";
   
-
         $.getJSON(api_call, function(forecast) {
         
           var open = "</span><i style='color:#FF69B4' class='wi ";
@@ -37,7 +36,7 @@
 
           context = {
             "detailed": forDetailed,
-            "brief": `${open}wi-thermometer${close} ${forecast.currently.temperature}, ${open}wi-strong-wind${close} ${forecast.currently.windSpeed} mph, ${open}wi-humidity${close} ${forecast.currently.humidity}`
+            "brief": `${open}wi-thermometer${close} ${forecast.currently.temperature}&deg;F &nbsp; ${open}wi-strong-wind${close} ${forecast.currently.windSpeed} mph  &nbsp; ${open}wi-humidity${close} ${forecast.currently.humidity}`
           }
 
           var dt = new Date($.now());
@@ -66,7 +65,7 @@
         var l1 = `<div class="boxed" data-toggle="tooltip" data-placement="bottom" title=`;
         var l2 = `"Miami Beach, Florida, USA\n\n ${context.detailed}`;
         var l3 = ` \nUpdated every 20 minutes. Last updated at ${apiReadTime} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( for demo purposes updated every minute )"`;
-        var l4 = ` >Weather: ${context.brief}&deg;F. more ...`;
+        var l4 = ` >Weather:  &nbsp; ${context.brief}. &nbsp; more ...`;
         var l5 = `</div>`;
 
         var html = l1 + l2 + l3 + l4 + l5;
